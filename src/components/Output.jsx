@@ -34,7 +34,10 @@ export default function Output({ data, error, repositories }) {
                   {repositories &&
                     repositories.map((repo, key) => (
                       <ListGroup.Item key={key}>
-                        <span style={{ color: "blue" }}>{repo.name}</span>:{" "}
+                        {console.log(repo)}
+                        <span style={{ color: "blue" }}>
+                          <a href={repo.clone_url}>{repo.name}</a>
+                        </span>
                         {repo.description}
                       </ListGroup.Item>
                     ))}

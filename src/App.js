@@ -10,9 +10,11 @@ function App() {
   const [repositories, setRepositories] = useState(false);
 
   const handleSearch = (userName) => {
+    const clientSecret = "WRITE HERE YOUR CLIENT SECRET";
+    const clientId = "WRITE HERE YOUR CLIENT SECRET";
     async function fetchData() {
       const response = await fetch(
-        `https://api.github.com/users/${userName}?client_id=6322618226fb34f177f0&client_secret=10e225fd7665b4630d0ed22092f39bb348bed6ee&sort=created`
+        `https://api.github.com/users/${userName}?client_id=${clientId}&client_secret=${clientSecret}&sort=created`
       );
       const jsonData = await response.json();
       if (jsonData.message) {
